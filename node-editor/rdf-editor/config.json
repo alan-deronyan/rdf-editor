@@ -1,0 +1,64 @@
+{
+  "ontology": {
+    "proxy": false,
+    "nonTTLProxy": true,
+    "nonTTLProxyUrl": {
+      "http:": "http://linkeddata.uriburner.com/proxy?url={0}&output-format=turtle&force=rdf",
+      "https:": "https://linkeddata.uriburner.com/proxy?url={0}&output-format=turtle&force=rdf"
+    },
+    "fresnelLenses": true,
+    "fresnelFormats": true,
+    "fresnelGroups": true,
+    "preloadOntologies": [
+      "data/schema.ttl",
+      "data/rdf.ttl",
+      "data/rdfs.ttl",
+      "data/skos.ttl",
+      "data/foaf.ttl",
+      "data/dcterms.ttl",
+      "data/vcard.ttl",
+      "data/cert.ttl",
+      "data/space.ttl",
+      "data/void.ttl",
+      "data/sioc.ttl",
+      "data/gr.ttl"
+    ]
+  },
+  "labelProps": [
+    "http://www.w3.org/2004/02/skos/core#prefLabel",
+    "http://www.w3.org/2000/01/rdf-schema#label",
+    "http://xmlns.com/foaf/0.1/name"
+  ],
+  "defaultView": "statements",
+  "namingSchema": "EAV",
+  "EAV": {
+    "spo": ["Statement", "Statements"],
+    "s": ["Entity", "Entities"],
+    "p": ["Attribute", "Attributes"],
+    "o": ["Value", "Values"]
+  },
+  "SPO": {
+    "spo": ["Triple", "Triples"],
+    "s": ["Subject", "Subjects"],
+    "p": ["Predicate", "Predicates"],
+    "o": ["Object", "Objects"]
+  },
+  "autoInverseOfHandling": true,
+  "startHashSignAsResource": true,
+  "validateEmptyNodes": false,
+  "storage": [],
+  "ioTimeout": 60000,
+  "objectLookups": {
+    "enabled": false,
+    "sources": [
+      {
+        "label": "URI Burner",
+        "url": "http://linkeddata.uriburner.com/sparql?query=construct+%7B+%3Fs+rdf%3Atype+<{0}>+%7D+from+<http%3A%2F%2Fmitko.dnsalias.net%3A8005%2Fdataspace>+where+%7B+%3Fs+rdf%3Atype+<{0}>%7D&should-sponge=&format=text%2Fturtle"
+      }
+    ]
+  },
+  "pageSettings": {
+    "pageNo": 1,
+    "pageSize": 10
+  }
+}
